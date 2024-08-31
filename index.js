@@ -1,9 +1,13 @@
 const express = require('express');
 const {connectToMongoDB} = require('./connect')
 const path = require('path');
+
+const URL = require('./models/url');
+
 const urlRoute = require('./routes/url')
 const staticRoute = require('./routes/staticRouter')
-const URL = require('./models/url');
+const userRoute = require('./routes/user')
+
 // const { timeStamp } = require('console');
 const app = express();
 const PORT = 8001;
@@ -27,6 +31,7 @@ app.get('/', async(req,res)=>{
 })
 
 app.use('/url', urlRoute)
+app.use('/user', userRoute)
 app.use('/', staticRoute)
 
 

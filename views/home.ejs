@@ -42,12 +42,12 @@
       <table>
         <thead>
           <th>S. No.</th>
-          <th>Short ID</th>
+          <th>ShortID</th>
           <th>Redirect</th>
           <th>Clicks</th>
         </thead>
         <tbody>
-          <% urls.forEach(url, index => { %>
+          <% urls.forEach((url, index) => { %>
           <tr>
             <td><%= index + 1 %></td>
             <td><%= url.shortId %></td>
